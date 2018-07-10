@@ -7,151 +7,307 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/fontawesome/web-fonts-with-css/css/fontawesome-all.css">
   <link rel="stylesheet" href="css/style.css">
-  <title>Mi pagina</title>
+
+  <title>Project Store</title>
 </head>
 <body>
-  <!--Menu-->
-  <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
-    <a href="index.html" class="navbar-brand">Company logo</a>
-    <button class="navbar-toggler" data-toggle="collapse" data-target="#navegar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navegar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="poducts.html" class="nav-link">Products</a>
-        </li>
-        <li class="nav-item">
-          <a href="about.html" class="nav-link">About us</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact us</a>
-        </li>
-        <li class="nav-item">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2"  type="text" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!-- /.navbar-->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h1>Featured Product</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-        <div class="btn-group btn-group-lg">
-          <button class="btn btn-info">Buy Now!</button>
-          <button class="btn btn-default">Free Trial</button>
-          <!--Así lo haría yo...
-          <a href="#" class="btn btn-info" role="button">Buy Now!</a>
-          <a href="#" class="btn btn-warning" role="button">Free Trial</a>
-          -->
+  <!--Navigation-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!--Para dispositivos mobiles-->
+        <a href="index.html" class="navbar-brand"><h3>Project Store</h3></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#barraNavegacion">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <!--Fin mobiles-->
+      <!--Enlaces de la barra de navegacion-->
+        <div class="collapse navbar-collapse" id="barraNavegacion">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" id="subMenuShop" data-toggle="dropdown">Shop</a>
+              <div class="dropdown-menu" area-labelledby="#subMenuShop">
+                <a href="shop.html" class="dropdown-item">All</a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">Kids's Collection</a>
+                <a href="#" class="dropdown-item">Women's Collection</a>
+                <a href="#" class="dropdown-item">Men's Collection</a>
+              </div>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Product</a></li>
+            <li class="nav-item"><a href="cart.html" class="nav-link">Cart</a></li>
+            <li class="nav-item"><a href="about_us.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Contact Us</a></li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="cart.html" class="nav-link">
+                <i class="fa fa-shopping-cart">
+                  <span class="badge badge-secondary badge-pill float-right">6</span>
+                </i>
+              </a>
+            </li>
+            <li class="nav-item dropdown dropleft">
+              <a href="#" class="nav-link dropdown-toggle" id="dropdownUsuario" data-toggle="dropdown">
+                <i class="fa fa-user"></i>
+              </a>
+              <div class="dropdown-menu" area-labelledby="#dropdownUsuario">
+                <a href="#" class="dropdown-item">Account Settings</a>
+                <a href="#" class="dropdown-item">Close</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#"  class="nav-link" data-toggle="modal" data-target="#miModal">Sign In</a>
+            </li>
+          </ul>
         </div>
-        <p><a href="#">Read more about the product</a></p>
-      </div>
-      <div class="col-md-8 d-sm-block">
-        <img src="img/img_nature_wide.jpg" width="100%" height="auto">
-      </div>
+      <!--Fin enlaces-->
     </div>
-    <!-- /.row-->
-    <hr>
-    <div class="row">
-      <div class="col-md-8">
-        <h3>The Company</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis architecto dolor
-          optio nobis nostrum magni neque accusantium voluptatibus, beatae similique!
-        </p>
-      </div>
-      <div class="col-md-4">
-        <p class="bg-light rounded lead text-center p-md-5 m-md-3">
-          Our Motto
-        </p>
-      </div>
+    <!--End container-fluid-->
+  </nav>
+  <!--End Navigation-->
+
+  <!--Modal-->
+  <div class="modal fade" id="miModal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Sign In</h2>
+          <button type="button" name="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <h4 class="text-muted">Sign in with your email address</h4>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email-add" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="email-add" placeholder="Enter your password" required>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="miCheckBox1">
+              <label class="form-check-label" for="miCheckBox1">Remember me</label>
+            </div>
+            <button type="submit" name="button" class="btn btn-primary btn-block">Sign in</button>
+          </form>
+        </div>
+        <div class="modal-footer"></div>
+        </div>
     </div>
-    <!-- /.row -->
-    <hr>
-    <div class="row">
-      <div class="col-md-12">
-        <h3>Testimonials</h3>
-        <div class="carousel slide text-center" id="carouselTestiminios" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <blockquote cite="#" class="blockquote">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam id
-                  voluptatibus voluptates vero temporibus rerum. Itaque quaerat quis atque
-                  in totam, alias ipsum culpa, quasi tempore placeat autem aut est libero ex.
-                </p>
-                <footer class="blockquote-footer">
-                  Je Suis Un Jerome
-                </footer>
-              </blockquote>
+  </div>
+  <!--Fin Modal-->
+
+  <!--Contenido de la pagina-->
+  <!--Carousel-->
+  <div class="carousel slide carousel-fade" id="miCarousel1" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#miCarousel1" data-slide-to="0" class="active"></li>
+        <li data-target="#miCarousel1" data-slide-to="1"></li>
+        <li data-target="#miCarousel1" data-slide-to="2"></li>
+      </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="height: 100vh">
+          <img src="img/carousel/1.gif" alt="First Image" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Lorem ipsum.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="carousel-item" style="height: 100vh">
+          <img src="img/carousel/2.gif" alt="Second Image" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Lorem ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nam.</p>
+          </div>
+        </div>
+        <div class="carousel-item" style="height: 100vh">
+          <img src="img/carousel/3.gif" alt="Third Image" class="d-block w-100">
+          <div class="carousel-caption d-none d-md-block">
+            <h3>Lorem ipsum dolor.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nam.</p>
+          </div>
+        </div>
+      </div>
+    <a href="#miCarousel1" class="carousel-control-prev" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a href="#miCarousel1" class="carousel-control-next" role="button" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  <!--Fin carousel-->
+  <hr />
+  <div class="container">
+    <div class="col-md-12">
+      <h3>Popular Products</h3>
+      <hr>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img class="card-img-top" src="img/Product1/24.jpg" alt="">
+            <div class="card-body">
+             <h4 class="float-right">$26.99</h4>
+             <h4 class="card-title"><a href="product.html">Product</a></h4>
+             <p class="card-text text-justify">
+               This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div class="ratings">
+               <p class="float-right"><a href="#">18 reviews</a></p>
+               <p>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               </p>
+              </div>
             </div>
-            <div class="carousel-item">
-              <blockquote cite="#" class="blockquote">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis
-                  pariatur officiis quos accusamus ex, adipisci dolorem aliquid, enim.
-                  Laudantium saepe, dolorum fugiat enim consequatur? Officiis nobis amet
-                  iure, quisquam delectus?
-                </p>
-                <footer class="blockquote-footer">
-                  Rhode
-                </footer>
-              </blockquote>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img class="card-img-top" src="img/Product1/29.jpg" alt="">
+            <div class="card-body">
+             <h4 class="float-right">$26.99</h4>
+             <h4 class="card-title"><a href="product.html">Product</a></h4>
+             <p class="card-text text-justify">
+               This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div class="ratings">
+               <p class="float-right"><a href="#">18 reviews</a></p>
+               <p>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="far fa-star"></i></span>
+               </p>
+              </div>
             </div>
-            <div class="carousel-item">
-              <blockquote cite="#" class="blockquote">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Adipisci iusto molestias neque, explicabo unde assumenda consectetur adipisicing elit.
-                 Repellendus, doloremque, molestiae? Itaque quam, veritatis ab officiis?
-                </p>
-                <footer class="blockquote-footer">
-                  JLA
-                </footer>
-              </blockquote>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img class="card-img-top" src="img/Product1/22.jpg" alt="">
+            <div class="card-body">
+             <h4 class="float-right">$26.99</h4>
+             <h4 class="card-title"><a href="product.html">Product</a></h4>
+             <p class="card-text text-justify">
+               This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div class="ratings">
+               <p class="float-right"><a href="#">18 reviews</a></p>
+               <p>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="fas fa-star"></i></span>
+               <span><i class="far fa-star"></i></span>
+               </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/Product1/20.jpg" alt="Imagen 1" class="card-img-top">
+              <div class="card-body">
+               <h4 class="float-right">$26.99</h4>
+               <h4 class="card-title"><a href="product.html">Product</a></h4>
+               <p class="card-text text-justify">
+                 This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <div class="ratings">
+                 <p class="float-right"><a href="#">18 reviews</a></p>
+                 <p>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="far fa-star"></i></span>
+                 </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-4 mb-3">
+            <div class="card">
+              <img src="img/Product1/30.jpg" alt="Imagen 2" class="card-img-top">
+              <div class="card-body">
+               <h4 class="float-right">$26.99</h4>
+               <h4 class="card-title"><a href="product.html">Product</a></h4>
+               <p class="card-text text-justify">
+                 This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <div class="ratings">
+                 <p class="float-right"><a href="#">18 reviews</a></p>
+                 <p>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="far fa-star"></i></span>
+                 </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-4">
+            <div class="card">
+              <img src="img/Product1/23.jpg" alt="Imagen 3" class="card-img-top">
+              <div class="card-body">
+               <h4 class="float-right">$26.99</h4>
+               <h4 class="card-title"><a href="product.html">Product</a></h4>
+               <p class="card-text text-justify">
+                 This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <div class="ratings">
+                 <p class="float-right"><a href="#">18 reviews</a></p>
+                 <p>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="fas fa-star"></i></span>
+                 <span><i class="far fa-star"></i></span>
+                 </p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
-    <!-- /.row -->
     <hr>
-    <div class="row">
-      <div class="footer col-md-12 text-center">
-        <p class="lead">
-          Wanna get in touch? Email us at ralphpierrerhodeexy@yahoo.com
+  </div>
+
+  <!--Footer-->
+  <footer class="footer bg-light p-3">
+      <div class="container">
+      <div class="col-md-12 text-center">
+        <br>
+        <h4>GET IN TOUCH</h4><br>
+        <p class="text-muted">
+          Any questions? Let us know in store at 21, 333 Sur, Tehuacán,
+          Puebla or call us on (+52)762 106 9690
         </p>
         <hr>
-        <ul class="list-unstyled text-center modificarIcono">
+        <ul class="list-unstyled text-center">
           <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
           <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
           <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
         </ul>
-      </div>
-    <!-- /.row -->
-  </div>
+        <hr>
+         <p class="text-muted">Copyright &copy; <a href="ecommerce.html">Project Store</a> 2018</p>
+       </div>
+     </div>
+  </footer>
+  <!--Fin footer-->
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bower_components/hammerjs/hammer.js"></script>
-  <script>
-    var $body= document.body;
-    var hammertime = new Hammer ($body);
-    hammertime.on('swipeleft', function(ev){
-      console.log(ev);
-    });
-    hammertime.on('swiperight', function(ev){
-      console.log(ev);
-    });
-  </script>
 </body>
 </html>
