@@ -1,0 +1,23 @@
+{
+  "name": "ProjectThree",
+  "homepage": "https://github.com/vcruzzen/DAW_Suriday_tics",
+  "authors": [
+    "vcruzzen <vanessasuriday.cruz.zenil@alumno.uttehuacan.edu.mx>"
+  ],
+  "description": "Proyect Three",
+  "main": "index.hmtl",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fontawesome": "^5.0.13",
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "hammerjs": "^2.0.8"
+  }
+}
